@@ -1,13 +1,27 @@
+// $(document).ready(function(){
+//   $("#btn-login").on ("click", function(){
+//     event.preventDefault();
+//     console.log("click")
+//     $.ajax({
+//       url:"https://api.spotify.com/v1/me",
+//       method: "POST",
+//       data: "7a4280c69bd540d588a6540f043ffa48"
+//     }).done(function(response){
+//       console.log(response)
+//     })
+//   });
+
+// });
 (function() {
 
     function login(callback) {
-        var CLIENT_ID = ENV["SPOTIFY_CLIENT_ID"];
-        var REDIRECT_URI = "http://localhost:9393/auth/spotify/callback";
+        var CLIENT_ID = '7a4280c69bd540d588a6540f043ffa48';
+        var REDIRECT_URI = 'http://localhost:9393/auth/spotify/callback';
         function getLoginURL(scopes) {
             return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
               '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
               '&scope=' + encodeURIComponent(scopes.join(' ')) +
-              '&response_type=token';
+              '&response_type=code';
         }
 
         var url = getLoginURL([
@@ -58,4 +72,3 @@
     });
 
 })();
-
