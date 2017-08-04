@@ -1,0 +1,38 @@
+
+<h2>YOUR PROFILE</h2><br>
+
+
+<h2>Today is <%= Time.now.strftime('%A %B %d %Y') %>  </h2>
+<div class="user_info">
+
+<h2> 
+  <ul class="info_list">
+   
+    <li>Username: 
+<% if current_user %>
+
+    <%= current_user.username %>
+    </li>
+
+    <li> email: <%= current_user.email %> </li>
+    <li> Member since: <% moment= current_user.created_at.localtime %> <%= moment.strftime("%A %B %d %Y") %>  </li>
+      </ul>
+<% end %>
+
+</h2>
+</div>
+
+<div id="map" style="width: 60%; height: 50%">
+ </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC-yLoa2wO2xsiX8SobkYW1h2f5i4XaWE&callback=initMap"
+    async defer></script>
+
+<div class="playlist">
+  <form action="" method=""> 
+    <label for="playlist">Create Playlist</label>
+    <input type="search" class="text" name="user_playlist">
+    <input type="submit" name="create" class="signin">
+  </form>
+</div>
+

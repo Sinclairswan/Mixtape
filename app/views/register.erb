@@ -1,0 +1,20 @@
+<div class="create_user">
+<form action="/user" method= "post" class="new_user_form">
+<div>
+<h2>create new user</h2>
+<br>
+<label for="username">Username</label>
+<input type="text" class="text" name="user[username]">
+</div>
+<div>
+<label for="email">Email</label>
+<input type="text" class="text" name="user[email]"
+<% if !@errors.nil? %> <p style="color: red"> <%= @errors %> </p> <% end %>
+</div>
+<div>
+<label for="password_hash">Password</label>
+<input type="password" class="text" name="user[password]">
+</div>
+<input class="signin" type="submit" name="register">
+</form>
+</div>

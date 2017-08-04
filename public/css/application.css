@@ -1,0 +1,289 @@
+body {
+  
+  
+  background: linear-gradient(to right, #360033, #0b8793);
+  background-size: 100%;
+  
+  
+}
+
+
+.signin {
+   /*Standard*/
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  max-width: 250px;
+ margin-top: 10px;
+
+  
+}
+
+  #map {
+    height: 100%;
+    border-radius: 5px;
+  }
+  html, body {
+    height: 500px;
+    margin: 30px;
+    padding: 50px;
+  }
+
+
+.h1 {
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 5px;
+  display: inline-block;
+  font-weight: 100;
+}
+
+
+.login {
+  position: relative;
+  height: 600px;
+  width: 405px;    
+
+  margin: auto;
+  padding: 60px 60px;
+  background: url('../images/loginscreen.png') no-repeat;   
+  background-size: cover;
+  box-shadow: 0px 30px 60px -5px #000;
+}
+
+h1 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 50px;
+  padding-bottom: 5px;
+  margin: 8px;
+  
+}
+h1:hover {
+  color: #cbffc0;
+  opacity: 0.2;
+  transition: all 0.5s ease-in-out;
+}
+.create_user{
+  position: relative;
+  height: 600px;
+  width: 405px;    
+
+  margin: auto;
+  padding: 60px 60px;
+  background: url('../images/loginscreen.png') no-repeat;   
+  background-size: cover;
+  box-shadow: 0px 30px 60px -5px #000;
+
+
+}
+
+.new_user_form {
+  margin:80px;
+  padding: 0px;
+
+
+}
+
+
+
+.active {
+  border-bottom: 2px solid #cbffc0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nonactive {
+  color: rgba(255, 255, 255, 0.5);
+  
+}
+
+.nonactive:hover{
+    
+  border-bottom: 2px solid #cbffc0;
+  
+}
+
+
+h2 {
+  padding-left: 12px;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-weight: 100;
+  
+}
+
+h2:first-child {
+  padding-left: 0px;
+}
+
+h3 {
+  padding: 0px;
+  margin: 0px;
+}
+.register {
+  
+  padding-left: 12px;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-weight: 100;
+  background: none;
+  border: none;
+}
+
+.register:hover {
+  border-bottom: 2px solid #cbffc0;
+  
+
+}
+
+span {
+  margin: 6px;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.8; 
+  display: inline-block;
+  position: relative;
+  top: -65px;
+  transition: all 0.5s ease-in-out;
+}
+
+.text {
+  border: none;
+  max-width:250px;
+  padding: 10px 20px;
+  display: block;
+  height: 15px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  margin-top: 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+.text:focus {
+  outline: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.text:focus + span {
+  opacity: 0.6;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="checkbox"],
+input[type="search"]
+ {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#checkbox-1-1 {
+   box-shadow: none;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+}
+
+}
+.search {
+  background-color: #c0cbff;
+  color: #FFF;
+  max-width: 500px;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+
+
+input {
+  display: inline-block;
+  padding-top: 20px;
+  font-size: 22px;
+}
+
+h2,
+
+
+label {
+  display: inline-block;
+  padding-top: 10px;
+  padding-left: 5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.signin {
+  background-color: #c0cbff;
+  color: #FFF;
+  max-width: 500px;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+
+.signin:hover {
+  background: #748cff;
+  box-shadow: 0px 4px 35px -5px #748cff;
+  cursor: pointer;
+}
+
+.signin:focus {
+  outline: none;
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  top: 85px;
+  position: relative;
+}
+
+a {
+  margin-left: 25px;
+  padding-bottom: 5px;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.user_info {
+  max-width:480px;
+  max-height: 200px;
+  border-radius: 5px;
+  background: url('../images/loginscreen.png') no-repeat;   
+  opacity: 0.7;
+}
+
+.info_list {
+  margin-left: 25px;
+  padding: 10px;
+
+}
+li {
+  padding: 7px;
+}
+
