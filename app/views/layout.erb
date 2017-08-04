@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
 <!-- css   -->
-<link rel="stylesheet" href="/css/application.css">
+<link rel="stylesheet" href="/css/skeleton.css">
 <link rel="stylesheet" href="/css/normalize.css?app=skills">
 
 
@@ -18,13 +18,29 @@
 
 	<title>mixtape app</title>
 </head>
-  <% if current_user %>
-    <nav>
-      <h3>
-        <a href="/logout">Logout</a>
-        <a href="/user/<%= current_user.id %>">Update</a>
-      </h3>
-    </nav>
+ <div container>
+    <div class="row">
+        <form class="" action="/"" method="get">
+          <input  type="submit" value="Home">
+        </form>
+     <% if current_user %>
+        <form class="" action="/user/<%=current_user.id%>"" method="get">
+          <input  type="submit" value="PROFILE">
+        </form>
+
+         <form class="" action="/logout"" method="get">
+           <input  type="submit" value="Logout">
+         </form>
+        <form class=" " action="/user/<%=current_user.id%>"" method="post">
+          <input type="hidden" name="_method" value="put">
+          <input class="button-primary" type="submit" value="Update">
+        </form>
+    </div>
+</div>
+
+
+
+
   <% end %>
 <body>
 

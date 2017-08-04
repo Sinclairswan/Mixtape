@@ -5,22 +5,21 @@ get '/user' do
   erb :login
 end
 
-post '/user' do
+
+post '/login' do
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
-    binding.pry
     session[:user_id] = @user.id
-
     redirect "/user/#{@user.id}"
   else
     @errors = "Wrong Username or Password"
-    erb :error    
+    erb :"/_error", locals: {errors: @errors }
   end
 end
 
 get '/user/:id' do
-  @user = User.find_by(email: params[:email]) 
-  erb :user_profile 
+  @user = User.find_by(email: params[:email])
+  erb :user_profile
 end
 
 
@@ -34,24 +33,22 @@ put '/user/:id' do
   end
 
 end
-
+#creating a new user
 get'/new' do
 
 erb :register
 end
 
 post '/user' do
-  @user = User.new(params[:user])
-  @user.password = params[:password]
-  @user.save
 
+  @user = User.new(params[:user])
   if @user.save
     session[:user_id] = @user.id
     redirect 'user/#{@user.id}'
   else
-    @errors = @user.errors.messages
+    @errors = @user.errors.full_messages
     error 422
-    erb :error
+    erb :"/_error", locals: {errors: @errors}
   end
 end
 
@@ -63,7 +60,7 @@ delete '/user/:id' do
 end
 
  get '/logout' do
-  session.delete(:user_id) 
+  session.delete(:user_id)
   redirect'/user'
 end
 

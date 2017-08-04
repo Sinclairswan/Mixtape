@@ -1,3 +1,5 @@
+
+
 # Set up gems listed in the Gemfile.
 # See: http://gembundler.com/bundler_setup.html
 #      http://stackoverflow.com/questions/7243486/why-do-you-need-require-bundler-setup
@@ -20,7 +22,12 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'pry'
+require 'omniauth'
+require  'omniauth-spotify'
+require 'spotify-client'
+require 'dotenv'
 
+Dotenv.load
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
@@ -33,10 +40,18 @@ configure do
   # See: http://www.sinatrarb.com/faq.html#sessions
   enable :sessions
   set :session_secret, ENV['SESSION_SECRET'] || 'this is a secret shhhhh'
+  use Rack::Session::Cookie
 
+  use OmniAuth::Strategies::Developer
+
+  use OmniAuth::Builder do
+    provider(:spotify, ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'], scope: 'playlist-read-private user-read-private user-read-email')
+  end
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
+
+
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }

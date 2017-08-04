@@ -2,31 +2,50 @@
 
 <div class="login">
  <h1>Mixtrek</h1>
- <h2 class="active"> sign in </h2>
 
  <h2> <a href="/new" class="nonactive">sign up</a></h2>
 
- </form>
+
 
  <br>
-  <form action="/user" method="post">
-   
+  <form action="/login" method="post">
     <input type="text" class="text" name="email">
      <span>email</span>
 
     <br>
     <br>
-
     <input type="password" class="text" name="password">
     <span>password</span>
     <br>
-
-  
     <input type="submit" class="signin" value="Sign in" >
-    
 
-    <hr>
-
+    <br>
   </form>
 
 </div>
+
+<div class="container">
+    <h1>Displaying User Data</h1>
+    <p>Log in with your Spotify account and this demo will display information about you fetched using the Spotify Web API</p>
+    <button class="btn btn-primary" id="btn-login"><a href="https://api.spotify.com/v1/me">Login</a>  </button>
+    <div id="result"></div>
+</div>
+<script id="result-template" type="text/x-handlebars-template">
+    <dl>
+      <img src="{{images.0.url}}">
+      <dt>User Name</dt>
+      <dd>{{id}}</dd>
+      <dt>Display Name</dt>
+      <dd>{{display_name}}</dd>
+      <dt>Country</dt>
+      <dd>{{country}}</dd>
+      <dt>Followers</dt>
+      <dd>{{followers.total}}</dd>
+      <dt>Profile</dt>
+      <dd><a href="{{external_urls.spotify}}" target="_blank">{{external_urls.spotify}}</a></dd>
+      <dt>Email</dt>
+      <dd>{{email}}</dd>
+      <dt>Product</dt>
+      <dd>{{product}}</dd>
+    </dl>
+</script>

@@ -25,6 +25,16 @@ group :test do
   gem 'capybara'
 end
 
+gem "octokit", "~> 4.0"
+gem 'dotenv'
+gem 'irbtools'
+
+
+#spotify
+gem 'spotify-client'
+gem 'omniauth'
+gem 'omniauth-spotify'
+
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'

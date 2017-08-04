@@ -8,8 +8,12 @@
 </div>
 <div>
 <label for="email">Email</label>
-<input type="text" class="text" name="user[email]"
+<input type="text" class="text" name="user[email]">
 <% if !@errors.nil? %> <p style="color: red"> <%= @errors %> </p> <% end %>
+</div>
+<div>
+  <label for="phone">Phone</label>
+  <input type="text" class="text" name="user[phone]">
 </div>
 <div>
 <label for="password_hash">Password</label>

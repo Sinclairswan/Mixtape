@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
   		t.string   :username,     null: false
   		t.string   :email,        null: false
   		t.string   :password_hash, null: false
+      t.integer  :phone, limit: 8
 
         t.timestamps
 
